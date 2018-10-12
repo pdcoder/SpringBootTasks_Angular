@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {TaskService} from "../task.service";
 import {Task} from "../task.model";
 
@@ -7,8 +7,7 @@ import {Task} from "../task.model";
   templateUrl: './tasks-add.component.html',
   styleUrls: ['./tasks-add.component.css']
 })
-
-  export class TasksAddComponent implements OnInit {
+export class TasksAddComponent implements OnInit {
 
   addTaskValue: string = null;
 
@@ -46,5 +45,4 @@ import {Task} from "../task.model";
 
     return mm + '/' + dd + '/' + yyyy;
   }
-}
 }

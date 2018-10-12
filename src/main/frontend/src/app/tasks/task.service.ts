@@ -1,15 +1,12 @@
-import { Injectable } from '@angular/core';
-import {Http} from "@angular/http";
+import {Http, Response} from "@angular/http";
+import "rxjs/Rx";
 import {Task} from "./task.model";
+import {EventEmitter, Injectable} from "@angular/core";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TaskService {
 
-  onTaskAdded = new Event;
-
-  Emitter<Task>();
+  onTaskAdded = new EventEmitter<Task>();
 
   constructor(private http: Http) {}
 

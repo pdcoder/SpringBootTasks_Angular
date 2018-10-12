@@ -1,5 +1,4 @@
 import {Component, OnInit} from "@angular/core";
-import {Response} from "@angular/http";
 
 import {Task} from "../task.model";
 import {TaskService} from "../task.service";
@@ -12,9 +11,13 @@ import {TaskService} from "../task.service";
 export class TasksListComponent implements OnInit {
 
   tasks: Task[] = [];
-  constructor(private taskService : TaskService) { }
+
+  constructor(private taskService: TaskService) {
+
+  }
 
   ngOnInit() {
+    // initial load of data
     this.taskService.getTasks()
       .subscribe(
         (tasks: any[]) => {
@@ -35,5 +38,4 @@ export class TasksListComponent implements OnInit {
   onTaskChange(event, task) {
     this.taskService.saveTask(task,event.target.checked).subscribe();
   }
-
 }
