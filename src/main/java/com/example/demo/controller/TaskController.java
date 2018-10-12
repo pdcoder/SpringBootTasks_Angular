@@ -1,15 +1,19 @@
 package com.example.demo.controller;
 
 
+
+
 import com.example.demo.domain.Task;
 import com.example.demo.service.TaskService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {
 
-
+    private final Logger log = LoggerFactory.getLogger(TaskController.class);
     private TaskService taskService;
 
     public TaskController(TaskService taskService) {
@@ -17,12 +21,12 @@ public class TaskController {
     }
 
     @GetMapping( value = {"","/"})
-    public Iterable<Task> list(){
-        return this.taskService.list();
+    public Iterable<Task> listTasks() {
+        return taskService.list();
     }
 
-    @PostMapping("/save")
-    public Task saveTask(@RequestBody Task task){
-        return this.taskService.save(task);
+    @PostMapping( "/save" )
+    public Task saveTask(@RequestBody Task task) {
+        return taskService.save(task);
     }
 }
