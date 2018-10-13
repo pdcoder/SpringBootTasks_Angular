@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Task} from "./task.model";
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'app-tasks',
@@ -8,7 +9,7 @@ import {Task} from "./task.model";
 })
 export class TasksComponent implements OnInit {
 
-  constructor() {}
+  constructor(private http: Http) {}
 
   ngOnInit() {
 
