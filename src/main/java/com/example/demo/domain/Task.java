@@ -23,10 +23,7 @@ public class Task {
     private LocalDate duedate;
     private boolean completed;
 
-    public Task(long id, String name, LocalDate now, boolean b) {
-        this.id = id;
-        this.name = name;
-        duedate = now;
-        completed= b;
+    public Task() {
+
     }
 }
